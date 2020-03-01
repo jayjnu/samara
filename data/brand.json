@@ -1,0 +1,11 @@
+{
+  "name": "brand",
+  "index": ["id"],
+  "documents": [
+    {
+      "id": "942404110",
+      "name": "apple",
+      "nameKo": "애플"
+    }
+  ]
+}

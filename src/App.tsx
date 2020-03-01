@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {Container} from '@material-ui/core';
+import Suggest from './features/suggest';
+import product from './data/product';
+
+export interface ProductData {
+  collection: string;
+  name: ProductDictionary
+}
+
+export interface ProductDictionary {
+  [productName: string]: ProductItem
+}
+
+export interface ProductItem {
+
+}
 
 function App() {
+  const [data, updateData] = useState<ProductItem|null>(null);
+
+  const onSearch = (keyword: string) => {
+    const item = (product as ProductData).name[keyword];
+    updateData(item);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>사말아?</h1>
       </header>
+      <Container>
+        <h2>Hello World</h2>
+        <Suggest onSubmit={onSearch}/>
+        <div>
+          {data && JSON.stringify(data)}
+        </div>
+      </Container>
     </div>
   );
 }

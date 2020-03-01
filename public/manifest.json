@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "사말아?",
+  "name": "전자기기 제품 주기를 알려주는 서비스",
   "icons": [
     {
       "src": "favicon.ico",
